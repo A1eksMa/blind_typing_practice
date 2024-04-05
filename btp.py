@@ -1,5 +1,3 @@
-#!/var/www/html/data-analysts/venv/bin/python3
-# encoding: utf-8
 import os
 import sys
 import curses
