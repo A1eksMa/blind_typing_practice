@@ -80,7 +80,6 @@ def main(stdscr):
         # Draw rectangle frame
         rectangle_height = start_win_height - 2
         rectangle_width = start_win_width - 2
-       #draw_rectangle(start_win, rectangle_height,rectangle_width,1,1)
         rectangle(start_win, 1, 1, rectangle_height, rectangle_width)
 
         curses.curs_set(False)
@@ -97,8 +96,10 @@ def main(stdscr):
     def main_window():
         stdscr.clear()
         curses.curs_set(True)
-        stdscr.addstr('Blind Typing Trainer')
-        stdscr.refresh()
+        rectangle(main_window, 1, 1, max_height, max_width)
+        stdscr.addstr('Blind Typing Trainer'.center(max_width))
+        main_window.noutrefresh()
+        curses.doupdate()
 
         for char in 'q':
             while True:
