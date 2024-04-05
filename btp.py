@@ -96,7 +96,10 @@ def main(stdscr):
     def main_window():
         stdscr.clear()
         curses.curs_set(True)
-        rectangle(main_window, 1, 1, max_height, max_width)
+        # Draw rectangle frame
+        rectangle_height = max_height - 2
+        rectangle_width = max_width - 2
+        rectangle(main_window, 1, 1, rectangle_height, rectangle_width)
         stdscr.addstr('Blind Typing Trainer'.center(max_width))
         main_window.noutrefresh()
         curses.doupdate()
