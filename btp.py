@@ -126,7 +126,7 @@ def main(stdscr):
                     break
                 else:
                     stdscr.addstr('    '+key)
-                    stdscr.refresh()
+                    pass
 
     def exit_window():
         pass
