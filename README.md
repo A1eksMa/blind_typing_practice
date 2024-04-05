@@ -1,1 +1,1 @@
-# blind_typing_practice
+# Blind Typing Practice
