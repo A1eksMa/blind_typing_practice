@@ -115,15 +115,16 @@ def main(stdscr):
                          title.center(max_width),
                          curses.color_pair(2))
         
-        main_window.noutrefresh()
-        curses.doupdate()
+        main_window.refresh()
+       #main_window.noutrefresh()
+       #curses.doupdate()
 
-        for char in 'q':
-            while True:
-                key = stdscr.getkey()
-                if key == char:
-                    user_input += key
-                    break
+        while True:
+            user_input = stdscr.getch()
+            if user_input == 27:
+                break
+            else:
+                exit()
 
 
     def exit_window():
