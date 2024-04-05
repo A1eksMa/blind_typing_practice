@@ -124,9 +124,7 @@ def main(stdscr):
                 if key == char:
                     user_input += key
                     break
-                else:
-                    stdscr.addstr('    '+key)
-                    pass
+
 
     def exit_window():
         pass
