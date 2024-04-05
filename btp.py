@@ -116,6 +116,7 @@ def main(stdscr):
                          curses.color_pair(2))
         
         main_window.refresh()
+        stdscr.getch()
        #main_window.noutrefresh()
        #curses.doupdate()
 
