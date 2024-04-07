@@ -96,6 +96,8 @@ def start_window(max_height, max_width):
         user_input = start_win.getch()
         if user_input == 27 or user_input == ord('q'):
             break
+        elif user_input == 9:
+            active_button += 1 if active_button <= 2 else 1
         elif user_input == ord('a'):
             active_button = 2 if active_button == 1 else 1
             draw_buttons(active_button)
@@ -106,7 +108,7 @@ def start_window(max_height, max_width):
         start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
         start_win.refresh()
         
-        if user_input in [curses.KEY_ENTER]:
+        if user_input in [13]:
             if active_button == 1:
                 start_win.clear()
                 start_win.refresh()
