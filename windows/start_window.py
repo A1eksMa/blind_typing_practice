@@ -70,6 +70,7 @@ def start_window(max_height, max_width):
 
     
     def set_file_path(path_to_file):
+        user_input = ''
         while True:
             curses.curs_set(True)
             start_win.clear()
