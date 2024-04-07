@@ -11,6 +11,7 @@ __pycache__/
 
 # working stuff
 scripts/
+*.sh
 
 
 # Distribution / packaging
