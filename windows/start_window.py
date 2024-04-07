@@ -47,7 +47,7 @@ def start_window(max_height, max_width):
     active_button = 1
 
     button_space = 8*" "
-    button_padding = int((start_win_width - len(button1 + button_space + button2))/2)
+    button_padding = int((start_win_width - len(button1 + button_space + button2))/2)*" "
 
     def draw_buttons(active_button):
         if active_button == 1:
