@@ -68,13 +68,13 @@ def start_window(max_height, max_width):
     start_win.refresh()
     
     while True:
-        user_input = start_win.getkey()
-        if user_input == 'q':
+        user_input = start_win.getch()
+        if user_input == 27:
             break
-        elif user_input == chr(curses.KEY_RIGHT):
+        elif user_input == ord('a'):
             active_button = 2 if active_button == 1 else 1
             draw_buttons(active_button)
-        elif user_input == chr(curses.KEY_LEFT):
+        elif user_input == ord('d'):
             active_button = 1 if active_button == 2 else 2
             draw_buttons(active_button)
         """
