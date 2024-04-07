@@ -68,8 +68,8 @@ def start_window(max_height, max_width):
     start_win.refresh()
     
     while True:
-        user_input = start_win.getch()
-        if user_input == 27:
+        user_input = start_win.getkey()
+        if user_input == 'q':
             break
         """
         elif user_input == 39:
