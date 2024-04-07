@@ -50,12 +50,12 @@ def start_window(max_height, max_width):
     button_padding = int((start_win_width - len(button1 + button_space + button2))/2)
 
     def draw_buttons(active_button):
-        if active_button = 1:
+        if active_button == 1:
             start_win.addstr(buttons_row, 0, button_padding)
             start_win.addstr(buttons_row, len(button_padding), button1, curses.color_pair(8))
             start_win.addstr(buttons_row, len(button_padding+button1), button_space)
             start_win.addstr(buttons_row, len(button_padding+button1+button_space), button1, curses.color_pair(1))
-        elif active_button = 2:
+        elif active_button == 2:
             start_win.addstr(buttons_row, 0, button_padding)
             start_win.addstr(buttons_row, len(button_padding), button1, curses.color_pair(1))
             start_win.addstr(buttons_row, len(button_padding+button1), button_space)
