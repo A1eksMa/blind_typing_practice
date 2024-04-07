@@ -5,7 +5,7 @@ def start_window(max_height, max_width):
 
     from windows.main_window import main_window
 
-    #curses.curs_set(False)
+    curses.curs_set(False)
 
     left_and_right_padding = 12
     start_win_width = max_width - 2*left_and_right_padding
