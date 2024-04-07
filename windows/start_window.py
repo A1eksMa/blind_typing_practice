@@ -68,7 +68,7 @@ def start_window(max_height, max_width):
     
     path_to_file = ''
 
-    """
+    
     def set_file_path(path_to_file):
         while True:
             curses.curs_set(True)
@@ -84,7 +84,8 @@ def start_window(max_height, max_width):
             else:
                 path_to_file += chr(user_input)
         start_window(max_height, max_width)
-    """
+    
+    set_file_path(path_to_file)
 
     
 
