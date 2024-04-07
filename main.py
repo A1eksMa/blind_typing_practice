@@ -10,7 +10,7 @@ from windows.main_window import *
 # System settings
 
 # Path to file
-path_name = 'txt'
+path_name = ''
 
 # Timing
 started_time = None
