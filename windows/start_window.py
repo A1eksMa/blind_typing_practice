@@ -82,11 +82,11 @@ def start_window(max_height, max_width):
         start_win.refresh()
         
         if user_input in [10,13,curses.KEY_ENTER]:
-            if active_button = 1:
+            if active_button == 1:
                 start_win.clear()
                 start_win.refresh()
                 main_window(max_height, max_width)
-            elif active_button = 2:
+            elif active_button == 2:
                 break
             
 
