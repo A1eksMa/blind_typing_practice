@@ -74,7 +74,7 @@ def start_window(max_height, max_width):
         while True:
             curses.curs_set(True)
             start_win.clear()
-            start_win.addstr(0, 0, user_input)
+            start_win.addstr(0, 0, path_to_file)
             start_win.refresh()
             user_input = start_win.getch()
          
