@@ -73,11 +73,11 @@ def start_window(max_height, max_width):
         user_input = start_win.getch()
         if user_input == 27:
             break
-        elif user_input == curses.KEY_RIGHT:
+        elif user_input == 39:
             active_button = 2 if active_button == 1 else 1
-        elif user_input == curses.KEY_LEFT:
+        elif user_input == 37:
             active_button = 1 if active_button == 2 else 2
-        elif user_input == curses.KEY_ENTER:
+        elif user_input == 13:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
 
