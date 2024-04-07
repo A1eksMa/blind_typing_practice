@@ -71,13 +71,13 @@ def start_window(max_height, max_width):
         user_input = start_win.getkey()
         if user_input == 'q':
             break
-        """
-        elif user_input == 39:
+        elif user_input == curses.KEY_RIGHT:
             active_button = 2 if active_button == 1 else 1
             draw_buttons(active_button)
-        elif user_input == 37:
+        elif user_input == curses.KEY_LEFT:
             active_button = 1 if active_button == 2 else 2
             draw_buttons(active_button)
+        """
         elif user_input == 13:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
