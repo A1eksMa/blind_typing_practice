@@ -71,10 +71,10 @@ def start_window(max_height, max_width):
         user_input = start_win.getkey()
         if user_input == 'q':
             break
-        elif user_input == curses.KEY_RIGHT:
+        elif user_input == ord(curses.KEY_RIGHT):
             active_button = 2 if active_button == 1 else 1
             draw_buttons(active_button)
-        elif user_input == curses.KEY_LEFT:
+        elif user_input == ord(curses.KEY_LEFT):
             active_button = 1 if active_button == 2 else 2
             draw_buttons(active_button)
         """
