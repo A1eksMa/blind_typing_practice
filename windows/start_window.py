@@ -96,13 +96,6 @@ def start_window(max_height, max_width):
         user_input = start_win.getch()
         if user_input == 27 or user_input == ord('q'):
             break
-        """
-        elif user_input == ord('w'):
-            if active_button < 2:
-                active_button += 1 
-            else:
-                active_button = 1
-        """
         elif user_input == ord('a'):
             active_button = 2 if active_button == 1 else 1
             draw_buttons(active_button)
