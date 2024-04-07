@@ -5,7 +5,7 @@ def start_window(max_height, max_width):
 
     from windows.main_window import main_window
 
-    curses.curs_set(False)
+    #curses.curs_set(False)
 
     left_and_right_padding = 12
     start_win_width = max_width - 2*left_and_right_padding
@@ -65,11 +65,29 @@ def start_window(max_height, max_width):
         start_win.refresh()
     
     draw_buttons(active_button)
+    
+    path_to_file = ''
 
-    textbox = curses.textpad.Textbox(start_win)
-    textbox.stripspaces = True
-    textbox.edit()
-    path_to_file = textbox.gather()
+    """
+    def set_file_path(path_to_file):
+        while True:
+            curses.curs_set(True)
+            start_win.clear()
+            start_win.addstr(0, 0, user_input)
+            start_win.refresh()
+            user_input = start_win.getch()
+         
+            if user_input in [10,13,curses.KEY_ENTER]:
+                break
+            elif user_input == curses.KEY_BACKSPACE:
+                path_to_file = path_to_file[:-1]
+            else:
+                path_to_file += chr(user_input)
+        start_window(max_height, max_width)
+    """
+
+    
+
     
     start_win.addstr(0, 0, f"Button {active_button} selected, path to file: {path_to_file}", curses.color_pair(2))
     start_win.refresh()
