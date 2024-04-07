@@ -64,7 +64,8 @@ def start_window(max_height, max_width):
         start_win.refresh()
     
     draw_buttons(active_button)
-    
+    start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
+    start_win.refresh()
     
     while True:
         user_input = start_win.getkey()
