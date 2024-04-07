@@ -71,14 +71,13 @@ def start_window(max_height, max_width):
         user_input = start_win.getch()
         if user_input == 27:
             break
+        """
         elif user_input == 39:
             active_button = 2 if active_button == 1 else 1
-            #draw_buttons(active_button)
+            draw_buttons(active_button)
         elif user_input == 37:
             active_button = 1 if active_button == 2 else 2
-            #draw_buttons(active_button)
-
-        """
+            draw_buttons(active_button)
         elif user_input == 13:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
