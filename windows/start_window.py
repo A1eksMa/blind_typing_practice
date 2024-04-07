@@ -77,7 +77,7 @@ def start_window(max_height, max_width):
         elif user_input == ord('d'):
             active_button = 1 if active_button == 2 else 2
             draw_buttons(active_button)
-        elif user_input == 13:
+        elif user_input in [10,13,curses.KEY_ENTER]:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
 
