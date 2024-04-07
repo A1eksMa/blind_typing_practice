@@ -43,8 +43,8 @@ def start_window(max_height, max_width):
     curses.doupdate()
 
     # Add two buttons
-    button1 = "Continue"
-    button2 = "Exit"
+    button1 = "  Continue  "
+    button2 = "    Exit    "
     active_button = 1
 
     button_space = 8*" "
@@ -69,7 +69,7 @@ def start_window(max_height, max_width):
     
     while True:
         user_input = start_win.getch()
-        if user_input == 27:
+        if user_input == 27 or user_input == ord('q'):
             break
         elif user_input == ord('a'):
             active_button = 2 if active_button == 1 else 1
@@ -77,10 +77,11 @@ def start_window(max_height, max_width):
         elif user_input == ord('d'):
             active_button = 1 if active_button == 2 else 2
             draw_buttons(active_button)
-        """
         elif user_input == 13:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
+
+        """
         else:
             start_win.clear()
             start_win.refresh()
