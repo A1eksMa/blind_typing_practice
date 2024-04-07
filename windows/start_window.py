@@ -65,19 +65,16 @@ def start_window(max_height, max_width):
     
     draw_buttons(active_button)
     
-
-
-
     
     while True:
-        user_input = start_win.getch()
-        if user_input == 27:
+        user_input = start_win.getkey()
+        if user_input == curses.KEY_ESCAPE:
             break
-        elif user_input == 39:
+        elif user_input == curses.KEY_RIGHT:
             active_button = 2 if active_button == 1 else 1
-        elif user_input == 37:
+        elif user_input == curses.KEY_LEFT:
             active_button = 1 if active_button == 2 else 2
-        elif user_input == 13:
+        elif user_input == curses.KEY_ENTER:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
 
