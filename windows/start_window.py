@@ -106,7 +106,7 @@ def start_window(max_height, max_width):
         start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
         start_win.refresh()
         
-        if user_input in [10,13,curses.KEY_ENTER]:
+        if user_input in [curses.KEY_ENTER]:
             if active_button == 1:
                 start_win.clear()
                 start_win.refresh()
