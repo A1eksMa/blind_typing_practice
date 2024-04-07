@@ -25,6 +25,7 @@ def start_window(max_height, max_width):
                               left_and_right_padding)
 
     start_win.bkgd(' ', curses.color_pair(5))
+    start_win.keypad(True)
 
     title = 'Welcome to Blind Typing Practice!'
     start_win.addstr(3, 0, title.center(start_win_width))
@@ -64,7 +65,13 @@ def start_window(max_height, max_width):
         start_win.refresh()
     
     draw_buttons(active_button)
-    start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
+
+    textbox = curses.textpad.Textbox(start_win)
+    textbox.stripspaces = True
+    textbox.edit()
+    path_to_file = textbox.gather()
+    
+    start_win.addstr(0, 0, f"Button {active_button} selected, path to file: {path_to_file}", curses.color_pair(2))
     start_win.refresh()
     
     while True:
