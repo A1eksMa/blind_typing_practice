@@ -17,7 +17,7 @@ def start_window(max_height, max_width):
     if start_win_height < min_start_win_height:
         start_win_height = min_start_win_heigh
 
-    buttons_row = start_win_height - 3
+    buttons_row = start_win_height - 5
 
     start_win = curses.newwin(start_win_height,
                               start_win_width,
@@ -40,6 +40,7 @@ def start_window(max_height, max_width):
     rectangle(start_win, 1, 1, rectangle_height, rectangle_width)
     
     start_win.noutrefresh()
+    curses.doupdate()
 
     # Add two buttons
     button1 = "Continue"
@@ -54,18 +55,17 @@ def start_window(max_height, max_width):
             start_win.addstr(buttons_row, 0, button_padding)
             start_win.addstr(buttons_row, len(button_padding), button1, curses.color_pair(8))
             start_win.addstr(buttons_row, len(button_padding+button1), button_space)
-            start_win.addstr(buttons_row, len(button_padding+button1+button_space), button1, curses.color_pair(1))
+            start_win.addstr(buttons_row, len(button_padding+button1+button_space), button2, curses.color_pair(1))
         elif active_button == 2:
             start_win.addstr(buttons_row, 0, button_padding)
             start_win.addstr(buttons_row, len(button_padding), button1, curses.color_pair(1))
             start_win.addstr(buttons_row, len(button_padding+button1), button_space)
-            start_win.addstr(buttons_row, len(button_padding+button1+button_space), button1, curses.color_pair(8))
+            start_win.addstr(buttons_row, len(button_padding+button1+button_space), button2, curses.color_pair(8))
+        start_win.refresh()
     
     draw_buttons(active_button)
     
-    start_win.noutrefresh()
-    
-    curses.doupdate()
+
 
 
     
@@ -77,12 +77,12 @@ def start_window(max_height, max_width):
             active_button = 2 if active_button == 1 else 1
         elif user_input == curses.KEY_LEFT:
             active_button = 1 if active_button == 2 else 2
-        elif user_input == curses.KEY_ENTER:# or user_input in [10, 13]:
+        elif user_input == curses.KEY_ENTER:
             start_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             start_win.refresh()
 
         draw_buttons(active_button)
-        start_win.refresh()
+        
 
 
         
