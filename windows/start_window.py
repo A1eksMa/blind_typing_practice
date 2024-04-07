@@ -68,7 +68,7 @@ def start_window(max_height, max_width):
     
     while True:
         user_input = start_win.getkey()
-        if user_input == curses.KEY_ESCAPE:
+        if user_input == curses.KEY_BREAK:
             break
         elif user_input == curses.KEY_RIGHT:
             active_button = 2 if active_button == 1 else 1
