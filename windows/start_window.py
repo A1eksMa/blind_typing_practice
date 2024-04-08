@@ -2,7 +2,7 @@ def start_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
-    max_height, max_width = user_settings.dispaly.get_display()
+    max_height, max_width = user_settings.get_display()
 
 
     # Set width start window
