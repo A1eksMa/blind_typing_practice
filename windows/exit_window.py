@@ -73,9 +73,9 @@ def exit_window(max_height, max_width):
     while True:
         user_input = exit_win.getch()
 
-        if user_input =='d':
+        if user_input == ord('d'):
             active_button = 2 if active_button == 1 else 1
-        elif user_input == 'a':
+        elif user_input == ord('a'):
             active_button = 1 if active_button == 2 else 2
         
         draw_buttons(active_button)
@@ -90,6 +90,7 @@ def exit_window(max_height, max_width):
                 main_window(max_height, max_width)
             elif active_button == 2:
                 break
+            
 
 
             
