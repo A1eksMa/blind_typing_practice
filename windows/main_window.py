@@ -39,7 +39,7 @@ def main_window(curses, user_settings, debug_mode = False):
         typing_list = [line for line in file]
     typing_list = map(lambda x: [str(x)[:str(x).index(str(x).strip()[0])], str(x).strip()], typing_list)
     
-    max_line = max([(len(line[0])+len(line[1])) for line in typing_list])
+    max_line = max([(len(line[0]+line[1]) for line in typing_list])
     left_padding_pad = int((max_width-max_line)/2)
     
     pad = curses.newpad(max_height-6, max_line)
