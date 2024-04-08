@@ -59,7 +59,7 @@ def main_window(curses, user_settings, debug_mode = False):
         succesful_input = ''
         
         for char in typing_list[i][1]:
-            user_input = ''
+            user_input = ord('')
 
             while chr(user_input) != char:
                 user_input = pad.getch()
