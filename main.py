@@ -1,3 +1,4 @@
+import curses
 from windows import *
 
 
@@ -8,9 +9,9 @@ class Settings():
         self.path_to_file = ''
     
     def get_display(self):
-        height = curses.LINES - 1
-        width = curses.COLS - 1
-        return height, width
+        self.height = curses.LINES - 1
+        self.width = curses.COLS - 1
+        return self.height, self.width
        
         
 
@@ -62,7 +63,7 @@ def main(stdscr):
     stdscr.clear()
     stdscr.refresh()
     
-    main_window(user_settings, True)
+    main_window(curses, user_settings, True)
 
 
 # Start script
