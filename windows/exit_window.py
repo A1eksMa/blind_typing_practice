@@ -1,9 +1,8 @@
-def exit_window(user_settings, debug_mode = False):
+def exit_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
-    max_width = curses.COLS - 1
-    max_height = curses.LINES - 1
+    max_height, max_width = user_settings.get_display()
 
     # Set width exit window
     left_and_right_padding = 12
@@ -64,7 +63,7 @@ def exit_window(user_settings, debug_mode = False):
     rectangle_height = exit_win_height - 2
     rectangle_width = exit_win_width - 2
     
-    rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
+    curses.textpad.rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
     
     exit_win.noutrefresh()
     
@@ -91,7 +90,7 @@ def exit_window(user_settings, debug_mode = False):
             elif active_button == 2: active_button = 1
                 
             draw_buttons(active_button)
-            rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
+            curses.textpad.rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
             exit_win.refresh()
 
             if debug_mode:
