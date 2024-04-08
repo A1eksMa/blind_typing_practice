@@ -70,7 +70,7 @@ def main_window(curses, user_settings, debug_mode = False):
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
                     main_win.refresh()
   
-            succesful_input +=user_input
+            succesful_input +=char
             pad.addstr(i, len(typing_list[i][0]), succesful_input, curses.color_pair(4))
             pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
 
