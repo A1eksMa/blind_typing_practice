@@ -63,7 +63,7 @@ def main(stdscr):
     def exit_window():
         pass
 
-    start_window(max_height, max_width)
+    exit_window(max_height, max_width)
 
 
 # Start script
