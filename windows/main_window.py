@@ -59,7 +59,7 @@ def main_window(curses, user_settings, debug_mode = False):
         for char in typing_list[i][1]:
             user_input = ''
             while user_input != char:
-                user_input = chr(stdscr.getkey())
+                user_input = chr(pad.getkey())
                 if debug_mode:
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
                     main_win.refresh()
