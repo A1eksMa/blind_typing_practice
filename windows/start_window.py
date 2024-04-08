@@ -4,6 +4,8 @@ def start_window(max_height, max_width, debug_mode = False):
     from curses.textpad import rectangle
     from windows.main_window import main_window
 
+    path_to_file = ''
+
     # Curses settings
     curses.curs_set(True)
 
@@ -34,7 +36,7 @@ def start_window(max_height, max_width, debug_mode = False):
     message = 'Input path to typing file and press Enter to continue (or Esc to exit)'
     start_win.addstr(5, 0 ,message.center(start_win_width))
 
-    start_win.noutrefresh()
+   start_win.noutrefresh()
 
     # Draw rectangle frame
     rectangle_height = start_win_height - 2
@@ -42,9 +44,24 @@ def start_window(max_height, max_width, debug_mode = False):
     rectangle(start_win, 1, 1, rectangle_height, rectangle_width)
     
     start_win.noutrefresh()
-    curses.doupdate()
 
-    path_to_file = ''
+    # Draw input form
+    def draw_input_box():
+        input_box_padding = 3
+        lenght = start_win_width - 2*input_box_padding
+        
+        message = "Path to file: "
+        
+        start_win.addstr(9, input_box_padding, message)
+        start_win.addstr(9, input_box_padding + len(message), path_to_file, curses.color_pair(1))
+        spaces = lenght - input_box_padding + len(message) + len(path_to_file)
+        start_win.addstr(9, input_box_padding + len(message) + len(path_to_file), ''*spaces, curses.color_pair(1))
+    
+    draw_input_box()
+
+    start_win.noutrefresh()
+
+    curses.doupdate()
     
     while True:
         user_input = start_win.getch()
