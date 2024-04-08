@@ -26,16 +26,6 @@ class Timing():
         return self.session_duration_total - self.pause_total 
        
 
-# System settings
-class Settings(Preferences, Timing):
-
-    def get_display(self):
-        self.height = curses.LINES - 1
-        self.width = curses.COLS - 1
-        return self.height, self.width
-
-
-
 
 # Statistics
 typed_keys = 0
@@ -48,3 +38,25 @@ accuracy = 0
 errors = 0
 expected_input = None
 user_input = None
+
+# Terminal
+class Display():
+    def __init__(self):
+        self.height = None
+        self.width = None
+
+    def get_display(self):
+        self.height = curses.LINES - 1
+        self.width = curses.COLS - 1
+        return self.height, self.width
+
+# System settings
+class Settings(Preferences, Display, Timing):
+    pass
+
+
+
+
+
+
+
