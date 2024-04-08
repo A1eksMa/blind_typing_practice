@@ -19,8 +19,6 @@ def exit_window(max_height, max_width, debug_mode = False):
     if exit_win_height < min_exit_win_height:
         exit_win_height = min_exit_win_heigh
 
-
-
     # Init exit window
     exit_win = curses.newwin( exit_win_height,
                               exit_win_width,
@@ -38,14 +36,6 @@ def exit_window(max_height, max_width, debug_mode = False):
     exit_win.addstr(exit_win_height-7, 0, message.center(exit_win_width))
 
     exit_win.noutrefresh()
-
-    # Draw rectangle frame
-    rectangle_height = exit_win_height - 2
-    rectangle_width = exit_win_width - 2
-    rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
-    
-    exit_win.noutrefresh()
-    curses.doupdate()
 
     # Add two buttons
     button1 = "  Continue  "
@@ -67,9 +57,20 @@ def exit_window(max_height, max_width, debug_mode = False):
             exit_win.addstr(buttons_row, len(button_padding), button1, curses.color_pair(1))
             exit_win.addstr(buttons_row, len(button_padding+button1), button_space)
             exit_win.addstr(buttons_row, len(button_padding+button1+button_space), button2, curses.color_pair(8))
-        exit_win.refresh()
-    
+        
     draw_buttons(active_button)
+    
+    exit_win.noutrefresh()
+    
+    # Draw rectangle frame
+    rectangle_height = exit_win_height - 2
+    rectangle_width = exit_win_width - 2
+    
+    rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
+    
+    exit_win.noutrefresh()
+    
+    curses.doupdate()
 
     if debug_mode:
         exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
