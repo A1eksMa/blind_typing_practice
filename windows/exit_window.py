@@ -38,7 +38,7 @@ def exit_window(max_height, max_width):
     # Draw rectangle frame
     rectangle_height = exit_win_height - 2
     rectangle_width = exit_win_width - 2
-    rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
+    #rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
     
     exit_win.noutrefresh()
     curses.doupdate()
@@ -88,4 +88,5 @@ def exit_window(max_height, max_width):
                 
             draw_buttons(active_button)
             exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
+            rectangle(exit_win, 1, 1, rectangle_height, rectangle_width)
             exit_win.refresh()
