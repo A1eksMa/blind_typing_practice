@@ -6,9 +6,28 @@ class Preferences():
         # Path to file
         self.path_to_file = ''  
 
+# Timing
+class Timing():
+    def __init__(self):
+        self.started_time = None
+        self.finished_time = None
+        self.current_time = None
+        self.pause_start = None
+        self.pause_end = None
+        self.pause_total = 0
+        
+    def pause(self):
+        return self.pause_end - self.pause_start
+    
+    def session_duration_total(self):
+        return self.finished_time - self.started_time
+
+    def session_duration(self):
+        return self.session_duration_total - self.pause_total 
+       
 
 # System settings
-class Settings(Preferences):
+class Settings(Preferences, Timing):
 
     def get_display(self):
         self.height = curses.LINES - 1
@@ -16,10 +35,7 @@ class Settings(Preferences):
         return self.height, self.width
 
 
-# Timing
-started_time = None
-current_time = None
-duration = 0
+
 
 # Statistics
 typed_keys = 0
