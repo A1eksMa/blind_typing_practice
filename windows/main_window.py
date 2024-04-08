@@ -16,7 +16,7 @@ def main_window(user_settings, debug_mode = False):
     # Draw rectangle frame
     rectangle_height = max_height - 2
     rectangle_width = max_width - 2
-    rectangle(main_win, 1, 1, rectangle_height, rectangle_width)
+    curses.textpad.rectangle(main_win, 1, 1, rectangle_height, rectangle_width)
 
     title = 'Blind Typing Trainer'
     main_win.addstr(0,
