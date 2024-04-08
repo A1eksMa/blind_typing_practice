@@ -35,7 +35,7 @@ def exit_window(max_height, max_width, debug_mode = False):
     exit_win.addstr(3, 0, title.center(exit_win_width))
     
     message = 'Press Tab to move and Enter to confirm'
-    exit_win.addstr(buttons_row-2, 0, message.center(exit_win_width))
+    exit_win.addstr(exit_win_height-7, 0, message.center(exit_win_width))
 
     exit_win.noutrefresh()
 
