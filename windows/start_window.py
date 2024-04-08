@@ -2,8 +2,8 @@ def start_window(user_settings, debug_mode = False):
 
     # Curses settings
     #curses.curs_set(True)
-    max_width = curses.COLS - 1
-    max_height = curses.LINES - 1
+    max_height, max_width = user_settings.get_display()
+
 
     # Set width start window
     left_and_right_padding = 12
