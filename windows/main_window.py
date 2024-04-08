@@ -35,8 +35,10 @@ def main_window(user_settings, debug_mode = False):
     main_win.refresh()
 
     with open(user_settings.path_to_file, 'r') as file:
+        i=0
         for line in file:
-            main_win.addstr(5, 5, line, curses.color_pair(2))
+            main_win.addstr(5+i, 5, line, curses.color_pair(2))
+            i+=1
     
     main_win.getch()
    #main_win.noutrefresh()
