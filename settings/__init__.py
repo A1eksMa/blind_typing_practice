@@ -1,3 +1,10 @@
+# User settings
+class Preferences():
+    def __init__(self):
+        # Path to file
+        self.path_to_file = ''  
+
+
 # System settings
 class Settings(Preferences):
     def __init__(self):
@@ -8,11 +15,6 @@ class Settings(Preferences):
         self.width = curses.COLS - 1
         return self.height, self.width
 
-# User settings
-class Preferences():
-    def __init__(self):
-        # Path to file
-        self.path_to_file = ''  
 
 # Timing
 started_time = None
