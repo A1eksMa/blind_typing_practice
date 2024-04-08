@@ -57,7 +57,7 @@ def main(stdscr):
     stdscr.bkgd(' ', curses.color_pair(1))
     stdscr.refresh()
 
-    start_window(user_settings, True)
+    start_window(curses, user_settings, True)
     
     stdscr.clear()
     stdscr.refresh()
