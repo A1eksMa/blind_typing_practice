@@ -30,8 +30,8 @@ def exit_window(max_height, max_width):
     title = 'Statistics:'
     exit_win.addstr(3, 0, title.center(exit_win_width))
     exit_win.addstr('\n\n')
-    message = 'Press any key to continue or Esc to exit'
-    exit_win.addstr(message.center(exit_win_width))
+    message = 'Press Tab to move and Enter to confirm'
+    exit_win.addstr(buttons_row-2, 0, message.center(exit_win_width))
 
     exit_win.noutrefresh()
 
