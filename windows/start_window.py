@@ -1,10 +1,8 @@
-def start_window(debug_mode = False):
+def start_window(user_settings, debug_mode = False):
 
     import curses
     from curses.textpad import rectangle
     from windows.main_window import main_window
-
-    path_to_file = ''
 
     # Curses settings
     curses.curs_set(True)
@@ -56,7 +54,7 @@ def start_window(debug_mode = False):
                
         spaces = start_win_width - 2*input_box_padding - len(message)
         start_win.addstr(9, input_box_padding + len(message), ' '*spaces, curses.color_pair(1))
-        start_win.addstr(9, input_box_padding + len(message), path_to_file, curses.color_pair(1))
+        start_win.addstr(9, input_box_padding + len(message), user_settings.path_to_file, curses.color_pair(1))
     
     draw_input_box()
 
@@ -67,15 +65,16 @@ def start_window(debug_mode = False):
     while True:
         user_input = start_win.getch()
         if user_input == 27:
-            break
+            exit()
         elif user_input in [10,13,curses.KEY_ENTER]:
-            main_window(path_to_file, True)
+            start_win.clear()
+            break
         elif user_input == curses.KEY_BACKSPACE:
-            path_to_file = path_to_file[:-1]
+            user_settings.path_to_file = user_settings.path_to_file[:-1]
             draw_input_box()
             start_win.refresh()
         else:
-            path_to_file += chr(user_input)
+            user_settings.path_to_file += chr(user_input)
             draw_input_box()
             start_win.refresh()
             
