@@ -37,11 +37,11 @@ def main_window(curses, user_settings, debug_mode = False):
 
     with open(user_settings.path_to_file, 'r') as file:
         typing_list = [line for line in file]
-        max_line = max([len(line) for line in file])
-        left_padding_pad = int((max_width-max_line)/2)
+    max_line = max([len(line) for line in typing_list])
+    left_padding_pad = int((max_width-max_line)/2)
     
-        pad = curses.newpad(max_height-6, max_line)
-        pad.bkgd(' ', curses.color_pair(5))
+    pad = curses.newpad(max_height-6, max_line)
+    pad.bkgd(' ', curses.color_pair(5))
 
     with open(user_settings.path_to_file, 'r') as file:
         i=0
