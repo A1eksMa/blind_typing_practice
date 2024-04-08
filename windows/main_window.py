@@ -32,11 +32,12 @@ def main_window(curses, user_settings, debug_mode = False):
     main_win.refresh()
 
     pad = curses.newpad(10, 10)
+    pad.bkgd(' ', curses.color_pair(5))
 
     with open(user_settings.path_to_file, 'r') as file:
         i=0
         for line in file:
-            pad.addstr(5+i, 5, line, curses.color_pair(2))
+            pad.addstr(i, 0, line, curses.color_pair(2))
             i+=1
     pad.refresh(0, 0, 20, 20, max_height, max_width)
     
