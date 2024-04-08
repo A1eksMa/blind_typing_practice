@@ -53,9 +53,9 @@ class Display():
 # System settings
 class Settings(Preferences, Timing, Display):
     def __init__(self):
-        preferences = Preferences()
-        display = Display()
-        timing = Timing()
+        self.preferences = Preferences()
+        self.display = Display()
+        self.timing = Timing()
 
 
 
