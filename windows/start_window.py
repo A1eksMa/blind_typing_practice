@@ -2,7 +2,7 @@ def start_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
-    max_height, max_width = user_settings.get_display()
+    max_height, max_width = user_settings.dispaly.get_display()
 
 
     # Set width start window
@@ -50,7 +50,7 @@ def start_window(curses, user_settings, debug_mode = False):
                
         spaces = start_win_width - 2*input_box_padding - len(message)
         start_win.addstr(9, input_box_padding + len(message), ' '*spaces, curses.color_pair(1))
-        start_win.addstr(9, input_box_padding + len(message), user_settings.path_to_file, curses.color_pair(1))
+        start_win.addstr(9, input_box_padding + len(message), user_settings.preferences.path_to_file, curses.color_pair(1))
     
     draw_input_box()
 
@@ -66,11 +66,11 @@ def start_window(curses, user_settings, debug_mode = False):
             start_win.clear()
             break
         elif user_input == curses.KEY_BACKSPACE:
-            user_settings.path_to_file = user_settings.path_to_file[:-1]
+            user_settings.preferences.path_to_file = user_settings.preferences.path_to_file[:-1]
             draw_input_box()
             start_win.refresh()
         else:
-            user_settings.path_to_file += chr(user_input)
+            user_settings.preferences.path_to_file += chr(user_input)
             draw_input_box()
             start_win.refresh()
             
