@@ -37,7 +37,7 @@ def main_window(curses, user_settings, debug_mode = False):
 
     with open(user_settings.path_to_file, 'r') as file:
         typing_list = [line for line in file]
-    typing_list = map(lambda x: [str(x)[:str(x).index(str(x).strip()[0])], str(x).strip()], typing_list)
+    typing_list = list(map(lambda x: [str(x)[:str(x).index(str(x).strip()[0])], str(x).strip()], typing_list))
     
     max_line = max([len(line[0]+line[1]) for line in typing_list])
     left_padding_pad = int((max_width-max_line)/2)
