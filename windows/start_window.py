@@ -52,10 +52,11 @@ def start_window(max_height, max_width, debug_mode = False):
         
         message = "Path to file: "
         
-        start_win.addstr(9, input_box_padding, message)
+        start_win.addstr(9, input_box_padding, message, curses.color_pair(5))
         start_win.addstr(9, input_box_padding + len(message), path_to_file, curses.color_pair(1))
+        
         spaces = lenght - input_box_padding + len(message) + len(path_to_file)
-        start_win.addstr(9, input_box_padding + len(message) + len(path_to_file), ''*spaces, curses.color_pair(1))
+        start_win.addstr(9, input_box_padding + len(message) + len(path_to_file), ' '*spaces, curses.color_pair(1))
     
     draw_input_box()
 
@@ -71,11 +72,11 @@ def start_window(max_height, max_width, debug_mode = False):
             main_window(max_height, max_width)
         elif user_input == curses.KEY_BACKSPACE:
             path_to_file = path_to_file[:-1]
-            start_win.addstr(9, 3, f"Path to file: {path_to_file} ", curses.color_pair(1))
+            draw_input_box()
             start_win.refresh()
         else:
             path_to_file += chr(user_input)
-            start_win.addstr(9, 3, f"Path to file: {path_to_file} ", curses.color_pair(1))
+            draw_input_box()
             start_win.refresh()
             
         if debug_mode:
