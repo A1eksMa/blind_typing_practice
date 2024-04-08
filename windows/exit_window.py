@@ -71,28 +71,24 @@ def exit_window(max_height, max_width):
     exit_win.refresh()
     
     while True:
-        user_input = exit_win.getch()
-
-        if user_input == ord('d'):
-            active_button = 2 if active_button == 1 else 1
-        elif user_input == ord('a'):
-            active_button = 1 if active_button == 2 else 2
         
-        draw_buttons(active_button)
-        exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
-        exit_win.refresh()
-
+        user_input = exit_win.getch()
         
         if user_input in [10,13,curses.KEY_ENTER]:
+            
             if active_button == 1:
                 exit_win.clear()
                 exit_win.refresh()
                 main_window(max_height, max_width)
             elif active_button == 2:
                 break
+        else:
             
-
-
-            
-
-
+            if user_input == ord('d'):
+                active_button = 2 if active_button == 1 else 1
+            elif user_input == ord('a'):
+                active_button = 1 if active_button == 2 else 2
+        
+            draw_buttons(active_button)
+            exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
+            exit_win.refresh()
