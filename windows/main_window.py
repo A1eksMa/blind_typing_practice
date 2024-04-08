@@ -47,8 +47,8 @@ def main_window(curses, user_settings, debug_mode = False):
 
     for i,val in enumerate(typing_list):
         pad.addstr(i, 0, ''.join(val), curses.color_pair(2))
+
     pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
-    
-        pad.getch()
+    pad.getch()
    #main_win.noutrefresh()
    #curses.doupdate()
