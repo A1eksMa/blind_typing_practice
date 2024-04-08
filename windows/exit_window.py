@@ -83,17 +83,9 @@ def exit_window(max_height, max_width):
             elif active_button == 2:
                 break
         elif user_input in [9,curses.KEY_BTAB]:
-            if active_button == 1:
-                active_button = 2
-            elif active_button == 2:
-                active_button = 1
+            if active_button == 1: active_button = 2
+            elif active_button == 2: active_button = 1
                 
-            
-            #if user_input == ord('d'):
-                #active_button = 2 if active_button == 1 else 1
-            #elif user_input == ord('a'):
-                #active_button = 1 if active_button == 2 else 2
-        
             draw_buttons(active_button)
             exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
             exit_win.refresh()
