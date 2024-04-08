@@ -31,7 +31,7 @@ def main_window(curses, user_settings, debug_mode = False):
     
     main_win.refresh()
 
-    pad = curses.newpad(10, 10, curses.color_pair(6))
+    pad = curses.newpad(10, 10)
 
     with open(user_settings.path_to_file, 'r') as file:
         i=0
