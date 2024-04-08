@@ -1,10 +1,3 @@
-'''
-import curses
-
-from windows.start_window import *
-from windows.main_window import *
-from windows.exit_window import *
-'''
 from windows import *
 
 
@@ -13,6 +6,15 @@ class Settings():
     def __init__(self):
         # Path to file
         self.path_to_file = ''
+    
+    def get_display():
+        height = curses.LINES - 1
+        width = curses.COLS - 1
+        return height, width
+       
+        
+
+             
 user_settings = Settings()
 
 # Timing
