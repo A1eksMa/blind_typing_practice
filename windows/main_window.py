@@ -63,6 +63,5 @@ def main_window(curses, user_settings, debug_mode = False):
                 if debug_mode:
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
                     main_win.refresh()
-    
-   #main_win.noutrefresh()
-   #curses.doupdate()
+            pad.addstr(i, 0, char, curses.color_pair(4))
+
