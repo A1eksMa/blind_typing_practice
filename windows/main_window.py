@@ -65,7 +65,7 @@ def main_window(curses, user_settings, debug_mode = False):
             while chr(user_input) != char:
                 user_input = pad.getch()
                 if user_input == 27:
-                    exit_window(curses, user_settings, True)
+                    exit() #_window(curses, user_settings, True)
 
                 if debug_mode:
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
