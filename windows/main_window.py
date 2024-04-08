@@ -35,7 +35,7 @@ def main_window(curses, user_settings, debug_mode = False):
         max_line = max([len(line) for line in file])
         left_padding_pad = int((max_width-max_line)/2)
     
-        pad = curses.newpad(len(file), max_line)
+        pad = curses.newpad(100, max_line)
         pad.bkgd(' ', curses.color_pair(5))
 
     
