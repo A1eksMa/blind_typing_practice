@@ -31,5 +31,5 @@ def main_window(path_to_file, debug_mode = False):
    #main_window.noutrefresh()
    #curses.doupdate()
     if debug_mode:
-        start_win.addstr(0, 0, f"Path to file: {path_to_file}", curses.color_pair(2))
-        start_win.refresh()
+        main_win.addstr(0, 0, f"Path to file: {path_to_file}", curses.color_pair(2))
+        main_win.refresh()
