@@ -1,7 +1,4 @@
-import os
-import sys
 import curses
-from curses.textpad import Textbox, rectangle
 
 from windows.start_window import *
 from windows.main_window import *
@@ -52,7 +49,7 @@ def main(stdscr):
     stdscr.bkgd(' ', curses.color_pair(1))
     stdscr.refresh()
 
-    exit_window(max_height, max_width)
+    start_window(max_height, max_width, True)
 
 
 # Start script
