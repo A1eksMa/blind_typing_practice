@@ -49,7 +49,7 @@ def main(stdscr):
     stdscr.bkgd(' ', curses.color_pair(1))
     stdscr.refresh()
 
-    start_window(max_height, max_width, True)
+    start_window(True)
 
 
 # Start script
