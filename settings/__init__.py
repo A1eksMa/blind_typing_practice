@@ -51,8 +51,11 @@ class Display():
         return self.height, self.width
 
 # System settings
-class Settings(Preferences, Display, Timing):
-    pass
+class Settings():
+    def __init__(self):
+        preferences = Preferences()
+        display = Display()
+        timing = Timing()
 
 
 
