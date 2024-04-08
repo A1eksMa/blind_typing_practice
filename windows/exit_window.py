@@ -83,9 +83,14 @@ def exit_window(max_height, max_width):
             elif active_button == 2:
                 break
         else:
+            if active_button == 1:
+                active_button = 2
+            elif active_button == 2:
+                active_button = 1
+                
             
-            if user_input == ord('d'):
-                active_button = 2 if active_button == 1 else 1
+            #if user_input == ord('d'):
+                #active_button = 2 if active_button == 1 else 1
             #elif user_input == ord('a'):
                 #active_button = 1 if active_button == 2 else 2
         
