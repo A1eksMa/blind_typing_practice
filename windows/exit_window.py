@@ -83,7 +83,7 @@ def exit_window(curses, user_settings, debug_mode = False):
             if active_button == 1:
                 exit_win.clear()
                 exit_win.refresh()
-                main_window(max_height, max_width)
+                main_window(curses, user_settings, True)
             elif active_button == 2:
                 break
         elif user_input in [9,curses.KEY_BTAB]:
