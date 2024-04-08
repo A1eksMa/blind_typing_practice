@@ -44,10 +44,10 @@ def main_window(curses, user_settings, debug_mode = False):
     pad.bkgd(' ', curses.color_pair(5))
 
     
-        i=0
-        for line in file:
-            pad.addstr(i, 0, line, curses.color_pair(2))
-            i+=1
+    i=0
+    for line in file:
+        pad.addstr(i, 0, line, curses.color_pair(2))
+        i+=1
     pad.refresh(0, 0, 5, left_padding_pad, max_height, max_width)
     
     pad.getch()
