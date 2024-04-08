@@ -36,6 +36,7 @@ def main_window(curses, user_settings, debug_mode = False):
     main_win.refresh()
 
     with open(user_settings.path_to_file, 'r') as file:
+        typing_list = [line for line in file]
         max_line = max([len(line) for line in file])
         left_padding_pad = int((max_width-max_line)/2)
     
