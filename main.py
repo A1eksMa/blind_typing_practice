@@ -12,9 +12,6 @@ class Settings():
         self.height = curses.LINES - 1
         self.width = curses.COLS - 1
         return self.height, self.width
-       
-        
-
              
 user_settings = Settings()
 
