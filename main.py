@@ -63,6 +63,10 @@ def main(stdscr):
     
     main_window(curses, user_settings, True)
 
+    stdscr.clear()
+    stdscr.refresh()
+    
+    exit_window(curses, user_settings, True)
 
 # Start script
 curses.wrapper(main)
