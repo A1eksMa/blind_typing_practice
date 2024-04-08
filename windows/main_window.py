@@ -40,6 +40,6 @@ def main_window(curses, user_settings, debug_mode = False):
             i+=1
     pad.refresh()
     
-    main_win.getch()
+    pad.getch()
    #main_win.noutrefresh()
    #curses.doupdate()
