@@ -39,7 +39,7 @@ def main_window(curses, user_settings, debug_mode = False):
         for line in file:
             pad.addstr(i, 0, line, curses.color_pair(2))
             i+=1
-    pad.refresh(0, 0, 20, 20, max_height, max_width)
+    pad.refresh(0, 0, 5, 5, max_height, max_width)
     
     pad.getch()
    #main_win.noutrefresh()
