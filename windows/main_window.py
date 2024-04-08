@@ -1,5 +1,5 @@
 def main_window(curses, user_settings, debug_mode = False):
-    from window import exit_window
+    from windows import exit_window
 
     # Curses settings
     curses.curs_set(True)
