@@ -1,4 +1,5 @@
 import curses
+from curses.textpad import rectangle
 from windows import *
 
 
