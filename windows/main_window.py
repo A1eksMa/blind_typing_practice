@@ -31,10 +31,12 @@ def main_window(curses, user_settings, debug_mode = False):
     
     main_win.refresh()
 
+    pad = curses.newpad(10, 10, curses.color_pair(6))
+
     with open(user_settings.path_to_file, 'r') as file:
         i=0
         for line in file:
-            main_win.addstr(5+i, 5, line, curses.color_pair(2))
+            pad.addstr(5+i, 5, line, curses.color_pair(2))
             i+=1
     
     main_win.getch()
