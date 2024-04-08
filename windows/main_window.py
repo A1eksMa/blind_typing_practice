@@ -3,7 +3,7 @@ def main_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
-    max_height, max_width = user_settings.get_display()
+    max_height, max_width = user_settings.display.get_display()
 
     # Init main window
     main_win = curses.newwin(max_height,
