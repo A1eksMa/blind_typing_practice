@@ -48,15 +48,13 @@ def start_window(max_height, max_width, debug_mode = False):
     # Draw input form
     def draw_input_box():
         input_box_padding = 3
-        lenght = start_win_width - 2*input_box_padding
-        
+
         message = "Path to file: "
-        
         start_win.addstr(9, input_box_padding, message, curses.color_pair(5))
+               
+        spaces = start_win_width - 2*input_box_padding - len(message)
+        start_win.addstr(9, input_box_padding + len(message), ' '*spaces, curses.color_pair(1))
         start_win.addstr(9, input_box_padding + len(message), path_to_file, curses.color_pair(1))
-        
-        spaces = lenght - input_box_padding + len(message) + len(path_to_file)
-        start_win.addstr(9, input_box_padding + len(message) + len(path_to_file), ' '*spaces, curses.color_pair(1))
     
     draw_input_box()
 
