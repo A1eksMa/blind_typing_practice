@@ -9,8 +9,6 @@ class Preferences():
 
 # System settings
 class Settings(Preferences):
-    def __init__(self):
-        pass
 
     def get_display(self):
         self.height = curses.LINES - 1
