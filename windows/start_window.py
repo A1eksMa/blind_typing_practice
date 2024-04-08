@@ -37,7 +37,7 @@ def start_window(curses, user_settings, debug_mode = False):
     # Draw rectangle frame
     rectangle_height = start_win_height - 2
     rectangle_width = start_win_width - 2
-    rectangle(start_win, 1, 1, rectangle_height, rectangle_width)
+    curses.textpad.rectangle(start_win, 1, 1, rectangle_height, rectangle_width)
     
     start_win.noutrefresh()
 
