@@ -75,15 +75,17 @@ def exit_window(max_height, max_width):
         
         if user_input in [10,13,curses.KEY_ENTER]:
             if active_button == 1:
-                start_win.clear()
-                start_win.refresh()
+                exit_win.clear()
+                exit_win.refresh()
                 main_window(max_height, max_width)
             elif active_button == 2:
                 break
                 
         else:
-            active_button = 2 if active_button == 1 else 1
-            active_button = 1 if active_button == 2 else 2
+            if user_input =='d':
+                active_button = 2 if active_button == 1 else 1
+            elif user_input == 'a':
+                active_button = 1 if active_button == 2 else 2
             
             draw_buttons(active_button)
             exit_win.addstr(0, 0, f"Button {active_button} selected", curses.color_pair(2))
