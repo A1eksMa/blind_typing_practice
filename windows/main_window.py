@@ -55,16 +55,18 @@ def main_window(curses, user_settings, debug_mode = False):
     for i in range(len(typing_list)):
         pad.addstr(i, 0, typing_list[i][0], curses.color_pair(4))
         pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
+
+        succesful_input = ''
         
         for char in typing_list[i][1]:
             user_input = ''
-            succesful_input = ''
+
             while user_input != char:
                 user_input = chr(pad.getch())
                 if debug_mode:
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
                     main_win.refresh()
-            succesful_input +=char
+            succesful_input +=user_input
             pad.addstr(i, len(typing_list[i][0]), succesful_input, curses.color_pair(4))
             pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
 
