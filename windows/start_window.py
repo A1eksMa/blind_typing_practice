@@ -36,7 +36,7 @@ def start_window(max_height, max_width, debug_mode = False):
     message = 'Input path to typing file and press Enter to continue (or Esc to exit)'
     start_win.addstr(5, 0 ,message.center(start_win_width))
 
-   start_win.noutrefresh()
+    start_win.noutrefresh()
 
     # Draw rectangle frame
     rectangle_height = start_win_height - 2
