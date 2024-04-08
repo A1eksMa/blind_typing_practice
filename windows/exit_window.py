@@ -1,11 +1,9 @@
-def exit_window(max_height, max_width, debug_mode = False):
-
-    import curses
-    from curses.textpad import rectangle
-    from windows.main_window import main_window
+def exit_window(user_settings, debug_mode = False):
 
     # Curses settings
-    curses.curs_set(False)
+    curses.curs_set(True)
+    max_width = curses.COLS - 1
+    max_height = curses.LINES - 1
 
     # Set width exit window
     left_and_right_padding = 12
