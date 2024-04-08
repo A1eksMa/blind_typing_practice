@@ -1,4 +1,5 @@
 def main_window(curses, user_settings, debug_mode = False):
+    from windows.exit_window import *
 
     # Curses settings
     curses.curs_set(True)
@@ -61,11 +62,15 @@ def main_window(curses, user_settings, debug_mode = False):
         for char in typing_list[i][1]:
             user_input = ''
 
-            while user_input != char:
-                user_input = chr(pad.getch())
+            while chr(user_input) != char:
+                user_input = pad.getch()
+                if user_input == 27:
+                    exit_window(curses, user_settings, True)
+
                 if debug_mode:
                     main_win.addstr(0,0,f"Excpected: {char} Input: {user_input}",curses.color_pair(2))
                     main_win.refresh()
+  
             succesful_input +=user_input
             pad.addstr(i, len(typing_list[i][0]), succesful_input, curses.color_pair(4))
             pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
