@@ -1,13 +1,6 @@
 def start_window(user_settings, debug_mode = False):
 
-    import curses
-    from curses.textpad import rectangle
     from windows.main_window import main_window
-
-    # Curses settings
-    curses.curs_set(True)
-    max_width = curses.COLS - 1
-    max_height = curses.LINES - 1
 
     # Set width start window
     left_and_right_padding = 12
