@@ -82,7 +82,7 @@ def exit_window(max_height, max_width):
                 main_window(max_height, max_width)
             elif active_button == 2:
                 break
-        else:
+        elif user_input in [9,curses.KEY_TAB]:
             if active_button == 1:
                 active_button = 2
             elif active_button == 2:
