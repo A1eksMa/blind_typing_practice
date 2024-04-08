@@ -31,7 +31,7 @@ def main_window(curses, user_settings, debug_mode = False):
     if debug_mode:
         main_win.addstr(0,
                         0,
-                        str(user_settings.__dict__),
+                        str(user_settings.pause_total),
                         curses.color_pair(2))
     
     main_win.refresh()
