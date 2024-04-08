@@ -1,3 +1,5 @@
+import curses
+
 # User settings
 class Preferences():
     def __init__(self):
