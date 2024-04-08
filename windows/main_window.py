@@ -3,7 +3,7 @@ def main_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
-    max_height, max_width = user_settings.get_display()
+    max_height, max_width = user_settings.display.get_display()
 
     # Init main window
     main_win = curses.newwin(max_height,
@@ -31,12 +31,12 @@ def main_window(curses, user_settings, debug_mode = False):
     if debug_mode:
         main_win.addstr(0,
                         0,
-                        str(user_settings.pause_total),
+                        str(user_settings.timing.pause_total),
                         curses.color_pair(2))
     
     main_win.refresh()
 
-    with open(user_settings.path_to_file, 'r') as file:
+    with open(user_settings.preferences.path_to_file, 'r') as file:
         typing_list = [line for line in file]
         typing_list = map(lambda x: str(x), typing_list)
         typing_list = map(lambda x: [x[:x.index(x.strip()[0])], x.strip()], typing_list)
