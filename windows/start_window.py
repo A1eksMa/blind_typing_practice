@@ -1,7 +1,7 @@
 def start_window(user_settings, debug_mode = False):
 
     # Curses settings
-    curses.curs_set(True)
+    .curses.curs_set(True)
     max_width = curses.COLS - 1
     max_height = curses.LINES - 1
 
