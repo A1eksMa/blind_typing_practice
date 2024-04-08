@@ -6,9 +6,11 @@ from windows.exit_window import *
 
 
 # System settings
-
-# Path to file
-path_name = ''
+class Settings():
+    def __init__(self):
+        # Path to file
+        self.path_to_file = ''
+user_settings = Settings()
 
 # Timing
 started_time = None
@@ -49,7 +51,12 @@ def main(stdscr):
     stdscr.bkgd(' ', curses.color_pair(1))
     stdscr.refresh()
 
-    start_window(True)
+    start_window(user_settings, True)
+    
+    stdscr.clear()
+    stdscr.refresh()
+    
+    main_window(user_settings, True)
 
 
 # Start script
