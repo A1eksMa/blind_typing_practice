@@ -25,6 +25,7 @@ def main_window(user_settings, debug_mode = False):
                      0,
                      title.center(max_width),
                      curses.color_pair(2))
+    
 
 
     if debug_mode:
@@ -32,6 +33,11 @@ def main_window(user_settings, debug_mode = False):
         main_win.refresh()
     
     main_win.refresh()
+
+    with open(user_settings.path_to_file, 'r') as file:
+        for line in file:
+            main_win.addstr(5, 5, line, curses.color_pair(2))
+    
     main_win.getch()
    #main_win.noutrefresh()
    #curses.doupdate()
