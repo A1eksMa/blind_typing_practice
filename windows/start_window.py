@@ -1,4 +1,4 @@
-def start_window(max_height, max_width, debug_mode = False):
+def start_window(debug_mode = False):
 
     import curses
     from curses.textpad import rectangle
@@ -8,6 +8,8 @@ def start_window(max_height, max_width, debug_mode = False):
 
     # Curses settings
     curses.curs_set(True)
+    max_width = curses.COLS - 1
+    max_height = curses.LINES - 1
 
     # Set width start window
     left_and_right_padding = 12
@@ -47,7 +49,7 @@ def start_window(max_height, max_width, debug_mode = False):
 
     # Draw input form
     def draw_input_box():
-        input_box_padding = 3
+        input_box_padding = left_and_right_padding
 
         message = "Path to file: "
         start_win.addstr(9, input_box_padding, message, curses.color_pair(5))
@@ -67,7 +69,7 @@ def start_window(max_height, max_width, debug_mode = False):
         if user_input == 27:
             break
         elif user_input in [10,13,curses.KEY_ENTER]:
-            main_window(max_height, max_width)
+            main_window(path_to_file, True)
         elif user_input == curses.KEY_BACKSPACE:
             path_to_file = path_to_file[:-1]
             draw_input_box()
