@@ -1,4 +1,4 @@
-def start_window(user_settings, debug_mode = False):
+def start_window(curses, user_settings, debug_mode = False):
 
     # Curses settings
     #curses.curs_set(True)
