@@ -35,7 +35,7 @@ def main_window(curses, user_settings, debug_mode = False):
         max_line = max([len(line) for line in file])
         left_padding_pad = int((max_width-max_line)/2)
     
-        pad = curses.newpad(100, max_line)
+        pad = curses.newpad(max_height-6, max_line)
         pad.bkgd(' ', curses.color_pair(5))
 
     
@@ -43,7 +43,7 @@ def main_window(curses, user_settings, debug_mode = False):
         for line in file:
             pad.addstr(i, 0, line, curses.color_pair(2))
             i+=1
-        pad.refresh(0, 0, 0, left_padding_pad, max_height, max_width)
+        pad.refresh(0, 0, 4, left_padding_pad, max_height, max_width)
     
         pad.getch()
    #main_win.noutrefresh()
