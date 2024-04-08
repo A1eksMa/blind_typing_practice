@@ -1,8 +1,13 @@
-def main_window(max_height, max_width):
+def main_window(path_to_file, debug_mode = False):
     import curses
-    from curses.textpad import Textbox, rectangle
+    from curses.textpad import rectangle
+    
+    # Curses settings
     curses.curs_set(True)
+    max_width = curses.COLS - 1
+    max_height = curses.LINES - 1
 
+    # Init main window
     main_window = curses.newwin(max_height,
                               max_width,
                               0,
@@ -25,3 +30,6 @@ def main_window(max_height, max_width):
     main_window.getch()
    #main_window.noutrefresh()
    #curses.doupdate()
+    if debug_mode:
+        start_win.addstr(0, 0, f"Path to file: {path_to_file}", curses.color_pair(2))
+        start_win.refresh()
