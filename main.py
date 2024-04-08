@@ -7,7 +7,7 @@ class Settings():
         # Path to file
         self.path_to_file = ''
     
-    def get_display():
+    def get_display(self):
         height = curses.LINES - 1
         width = curses.COLS - 1
         return height, width
